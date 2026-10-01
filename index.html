@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f3eee4" />
+  <title>赛博拼豆 · Bead Studio</title>
+  <meta name="description" content="在浏览器里拼一颗颗真实的拼豆：夹豆、插钉、熨烫、翻车——每一件作品都不一样。" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%23d4402a'/%3E%3Ccircle cx='32' cy='32' r='10' fill='%23f6f1e7'/%3E%3Cpath d='M16 24a18 18 0 0 1 12-9' stroke='%23fff' stroke-opacity='.65' stroke-width='4' stroke-linecap='round' fill='none'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Instrument+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    /* shown while the ~2 MB of script downloads; main.ts swaps it for the in-app loader */
+    #boot { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; background: #f6f1e7; color: #5a5148; font: 17px/1.4 "Songti SC", "Noto Serif SC", Georgia, serif; }
+    #boot .in { display: grid; gap: 18px; justify-items: center; }
+    #boot .ring { width: 54px; height: 54px; border-radius: 50%; border: 9px solid #d4402a; border-top-color: #f2c1b4; animation: bootspin 1.1s linear infinite; }
+    @keyframes bootspin { to { transform: rotate(360deg); } }
+    body { margin: 0; background: #f6f1e7; }
+  </style>
+</head>
+<body>
+  <div id="boot"><div class="in"><div class="ring"></div><p>正在把豆子摆上桌…</p><noscript>需要开启 JavaScript</noscript></div></div>
+  <canvas id="stage" aria-label="拼豆工作台"></canvas>
+  <div id="app"></div>
+  <div id="dbg" hidden></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
